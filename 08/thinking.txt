@@ -1,0 +1,42 @@
+0 abc efg 6
+1   c  f  2
+2 a cde g 5
+3 a cd fg 5
+4  bcd f  4
+5 ab d fg 5
+6 ab defg 6
+7 a c  f  3
+8 abcdefg 7
+9 abcd fg 6
+
+            got num
+2   c  f  1    X
+3 a c  f  7    X
+4  bcd f  4    X
+7 abcdefg 8    X
+
+5 a cd fg 3    X
+5 a cde g 2
+5 ab d fg 5
+
+6 abc efg 0
+6 ab defg 6    X
+6 abcd fg 9    X
+
+
+ONE   (len 2)
+FOUR  (len 4)
+SEVEN (len 3)
+EIGHT (len 7)
+
+NINE  (len 6 and has all of FOUR)
+SIX   (len 6 and has only 1 of ONE)
+ZERO  (len 6 and not SIX or NINE)
+
+A     (in SEVEN but not in ONE)
+E     (in EIGHT and not in NINE)
+C     (in EIGHT and not in SIX )
+D     (in EIGHT and not in ZERO)
+F     (in EIGHT and not in FOUND)
+B     (in FOUR  and not in FOUND)
+G     (not in FOUND)
