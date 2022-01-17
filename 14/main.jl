@@ -5,7 +5,6 @@ const Insertion = Tuple{Pair,Char}
 
 function part_one(polymer::Polymer, insertions::Vector{Insertion})::Int
     steps = 10
-    # println(join(string.(polymer)))
     for _ ∈ 1:steps
 
         # vector to hold insertions
@@ -34,7 +33,6 @@ function part_one(polymer::Polymer, insertions::Vector{Insertion})::Int
 
     # calculate score
     frequencies = map(c -> count(x -> x == c, polymer), unique(polymer))
-    # println.(t for t in zip(unique(polymer), frequencies))
 
     maximum(frequencies) - minimum(frequencies)
 
@@ -48,12 +46,10 @@ function part_two(polymer::Polymer, insertions::Vector{Insertion})::Int
         )
     end
     
-    @show pair_counts
     frequencies = Dict{Char,Int}()
     for c in polymer
         mergewith!(+, frequencies, Dict(c => 1))
     end
-    @show(frequencies)
 
     steps = 40
     for step ∈ 1:steps
